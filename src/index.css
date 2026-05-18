@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Amiri", serif;
+  
+  --color-islamic-primary: #1B4332;
+  --color-islamic-secondary: #2D6A4F;
+  --color-islamic-accent: #D4AF37;
+  --color-islamic-soft: #74C69D;
+  --color-islamic-gold: #FFD700;
+}
+
+@layer base {
+  body {
+    @apply bg-islamic-primary text-slate-50 font-sans min-h-screen overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl rounded-3xl p-6;
+  }
+  
+  .glass-button {
+    @apply bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-all duration-300 rounded-2xl p-4;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 10s ease-in-out infinite;
+}
+
+.mask-mosque {
+  background: linear-gradient(to top, rgba(10, 25, 20, 0.95) 0%, transparent 100%);
+  position: relative;
+}
+
+/* Simple mosque silhouette using clip-path */
+.mosque-dome {
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-32 bg-islamic-primary/60;
+  clip-path: ellipse(50% 100% at 50% 100%);
+}
+
+.mosque-minaret {
+  @apply absolute bottom-0 w-6 h-40 bg-islamic-primary/40;
+  clip-path: polygon(50% 0%, 100% 10%, 100% 100%, 0% 100%, 0% 10%);
+}

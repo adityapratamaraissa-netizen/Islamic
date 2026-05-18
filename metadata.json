@@ -1,0 +1,6 @@
+{
+  "name": "Barakah Islami",
+  "description": "A modern, aesthetic Islamic application featuring Al-Qur'an, prayer times, qibla direction, and daily prayers with a premium mobile-first design.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
